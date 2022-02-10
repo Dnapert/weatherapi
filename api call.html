@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styled.css">
+</head>
+
+<body>
+    <script>
+       fetch('https://api.openweathermap.org/data/2.5/weather?q=hedgesville&units=imperial&appid=87fa24f74aa9b690b0daba5d27ade47a').then((response)=>{
+    console.log('resolved',response);
+    return response.json();
+    })
+    .then(function(response){
+        document.getElementById("temp").innerHTML=response.main.temp;
+        document.getElementById("high").innerHTML=response.main.temp_max
+        document.getElementById("low").innerHTML=response.main.temp_min
+        document.getElementById("feels").innerHTML=response.main.feels_like
+    })
+    .catch((error)=>{console.log('rejected',error)})
+
+    
+    </script>
+    <h1>Current Weather</h1>
+    <script>
+        function validateForm(){
+            let x=document.form["zipForm"]["zipCode"].value;
+            if (x==""){
+                alert ("Must enter valid 5 digit zip")
+            }
+            return false;
+        }
+    </script>
+    <form name="zipForm" action="" onsubmit="return validateForm()"
+     >
+        <label for="zip">5 Digit zip code</label>
+        <input type="text" name="zipCode" size="2" maxlength="5">
+        <input type="submit" value="submit">
+    </form>
+
+<table><tr>
+    <th>City</th>
+    <th>temp</th>
+    <th>feels like</th>
+    <th>high</th>
+    <th>low</th>
+</tr><tr>
+    <td>Hedgesville</td>
+    <td id="temp"></td>
+    <th id="feels"></th>
+    <td id="high"></td>
+    <td id="low"></td>
+</tr>
+
+</table>
+<h2>Things</h2>
+</body>
+</html>
