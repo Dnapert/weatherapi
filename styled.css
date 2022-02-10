@@ -1,0 +1,42 @@
+body {
+    background-color: lightslategrey;
+}
+
+
+h1{
+    background-color: aquamarine;
+    margin: 5% 30%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: auto;
+    border: 8px;
+    border-radius: 20px;
+}
+h2{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+table{
+    flex: auto;
+}
+table th,td{
+    
+    font-family:'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    background-color: lightslategray;
+    width: 20%;
+    height: auto; 
+    text-align: center;
+    padding: 20px;
+
+}
+form {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
