@@ -9,7 +9,9 @@
 </head>
 
 <body>
+    
     <script>
+        ///////////////api call/////////////////////////
        fetch('https://api.openweathermap.org/data/2.5/weather?q=hedgesville&units=imperial&appid=87fa24f74aa9b690b0daba5d27ade47a').then((response)=>{
     console.log('resolved',response);
     return response.json();
@@ -22,10 +24,18 @@
     })
     .catch((error)=>{console.log('rejected',error)})
 
-    
+  
     </script>
     <h1>Current Weather</h1>
-    <script>
+   <script>
+          //////////////// Button event listener/handler/////////////////
+        let clickyBit=document.querySelector("clickyBit");
+       let funcOutput= document.getElementById("funcOutput");
+        clickyBit.addEventListener('click',function(event){
+            funcOutput.textContent="Entered"
+
+        });
+    
         function validateForm(){
             let x=document.form["zipForm"]["zipCode"].value;
             if (x==""){
@@ -33,13 +43,15 @@
             }
             return false;
         }
-    </script>
+    </script>-->
+    <!--///////////////form//////////////-->
     <form name="zipForm" action="" onsubmit="return validateForm()"
      >
-        <label for="zip">5 Digit zip code</label>
-        <input type="text" name="zipCode" size="2" maxlength="5">
-        <input type="submit" value="submit">
+        5 Digit zip code
+        <input type="text" oninvalid="alert('enter zip code')" id="zipCode" size="2" maxlength="5">
+        <input type="submit" id="clickyBit" value="submit">
     </form>
+    <p id="funcOutput"></p>
 
 <table><tr>
     <th>City</th>
