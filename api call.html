@@ -10,6 +10,7 @@
 
 <body>
     
+    
     <script>
         ///////////////api call/////////////////////////
        fetch('https://api.openweathermap.org/data/2.5/weather?q=hedgesville&units=imperial&appid=87fa24f74aa9b690b0daba5d27ade47a').then((response)=>{
@@ -29,7 +30,7 @@
     <h1>Current Weather</h1>
    <script>
           //////////////// Button event listener/handler/////////////////
-        let clickyBit=document.querySelector("clickyBit");
+        let clickyBit=document.getElementById("clickyBit");
        let funcOutput= document.getElementById("funcOutput");
         clickyBit.addEventListener('click',function(event){
             funcOutput.textContent="Entered"
@@ -43,7 +44,7 @@
             }
             return false;
         }
-    </script>-->
+    </script>
     <!--///////////////form//////////////-->
     <form name="zipForm" action="" onsubmit="return validateForm()"
      >
